@@ -11,7 +11,7 @@ from utils.project import (
 
 
 @pytest.fixture(scope="session")
-def project_dir() -> Path:
+def project_dir():
     test_session_id: str = generate_test_session_id()
     template_values = {
         "repo_name": f"test-repo-{test_session_id}",

@@ -37,7 +37,17 @@ exclude = "venv"
 
 [tool.flake8]
 docstring-convention = "all"
-ignore = ["D107", "D212", "E501", "W503", "W605", "D203", "D100", "D104"]
+ignore = [
+    "D107",
+    "D212",
+    "E501",
+    "W503",
+    "W605",
+    "D203",
+    "D100",
+    "D104",
+    "D103",
+]
 exclude = ["venv"]
 max-line-length = 119
 
