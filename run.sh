@@ -133,7 +133,7 @@ function configure-repo {
     gh secret set PROD_PYPI_TOKEN \
         --body "$PROD_PYPI_TOKEN" \
         --repo "$GITHUB_USERNAME/$REPO_NAME"
-    
+
     # protect main branch, enforcing passing build on feature branch before merge
     BRANCH_NAME="main"
     gh api -X PUT "repos/$GITHUB_USERNAME/$REPO_NAME/branches/$BRANCH_NAME/protection" \
