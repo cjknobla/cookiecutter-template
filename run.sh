@@ -6,8 +6,7 @@ THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # install core and development Python dependencies into the currently activated venv
 function install {
-    python -m ensurepip --upgrade
-    python -m pip install --upgrade pip setuptools
+    python -m pip install --upgrade pip
     python -m pip install cookiecutter pytest pre-commit
 }
 
