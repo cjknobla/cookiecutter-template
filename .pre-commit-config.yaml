@@ -4,7 +4,7 @@ exclude: ^{{cookiecutter.repo_name}}
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v6.0.0
     hooks:
       # Fails if there are any ">>>>>" lines in files due to merge conflicts.
       - id: check-merge-conflict
