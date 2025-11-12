@@ -1,9 +1,6 @@
-import json
 import shutil
 import subprocess
-from copy import deepcopy
 from pathlib import Path
-from typing import Dict
 from uuid import uuid4
 
 import pytest
@@ -27,6 +24,7 @@ def project_dir() -> Path:
         yield generated_repo_dir
     finally:
         shutil.rmtree(path=generated_repo_dir)
+
 
 def generate_test_session_id() -> str:
     test_session_id = str(uuid4())[:6]
