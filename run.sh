@@ -168,7 +168,7 @@ function open-pr-with-generated-project {
 
     # Generate the project ino the repository folder
     OUTDIR="./outdir/"
-    CONFIG_FILE_PATH="./$REPO_NAME.yaml"
+    CONFIG_FILE_PATH="./$REPO_NAME.config.yaml"
     cat <<EOF > "$CONFIG_FILE_PATH"
 default_context:
     repo_name: $REPO_NAME
@@ -215,16 +215,15 @@ EOF
 }
 
 function create-sample-repo {
-    git add .github/
-    git commit -m "fix: debugging the create-or-update-repo.yaml workflow"
-    git push origin main
+    git add .github/ run.sh \
+    && git commit -m "fix: debugging the create-or-update-repo.yaml workflow" \
+    && git push origin main || true
 
     gh workflow run .github/workflows/create-or-update-repo.yaml \
-        -f repo_name=generated-repo-3 \
-        -f package_import_name=generated_repo_3 \
+        -f repo_name=generated-repo-$REPO_NUMBER \
+        -f package_import_name=generated_repo_$REPO_NUMBER \
         -f is_public_repo=false \
         --ref main
-
 }
 
 # print all functions in this file
