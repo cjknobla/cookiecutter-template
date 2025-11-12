@@ -199,6 +199,9 @@ EOF
 
     # commit the changes and push them to remote feature branch
     git commit -m "feat: populated from cookiecutter-template"
+    if [[ -n "$GH_TOKEN" ]]; then
+        git remote set-url origin "https://$GITHUB_USERNAME:$GH_TOKEN@github.com/$GITHUB_USERNAME/$REPO_NAME"
+    fi
     git push origin "$UNIQUE_BRANCH_NAME"
 
     # open a PR from the feature branch into main
