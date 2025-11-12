@@ -4,8 +4,7 @@ from pathlib import Path
 from uuid import uuid4
 
 import pytest
-
-from tests.utils.project import (
+from utils.project import (
     generate_project,
     initialize_git_repo,
 )
